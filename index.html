@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebDev Website</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+	<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap" rel="stylesheet">
+	
+</head>
+<body>
+    <header id="hero">
+        <div class="hero">
+            <h1>Front End Website</h1>
+            <p>Explore my journey in web development using HTML, CSS and JS</p>
+        </div>
+    </header>
+    <nav id="navbar" class="scroll-indicator">
+	    <div id="hamburger">
+        <i class="fas fa-bars"></i>
+    </div>
+    <ul>
+        <li><a href="#hero">Home</a></li>
+        <li><a href="#about">About</a></li>
+		<li><a href="#skills">Skills</a></li>
+        <li><a href="#projects">Projects</a></li>
+		<li><a href="#certificates">Certificates</a></li>
+        <li><a href="#contact">Contact</a></li>
+    </ul>
+</nav>
+
+
+    <main>
+        <section id="about" class="card">
+            <h2><u>About</u></h2>
+            <p>This website showcases my front end web development skills in HTML, CSS, and JavaScript. Explore my mini projects, certifications, and contact information below.</p>
+        </section>
+
+<section id="skills" class="card">
+    <h2><u>Skills</u></h2>
+	<br>
+    <div class="skills-container">
+        <div class="skill-card">
+            <h3>Programming</h3>
+            <p>C, Python</p>
+        </div>
+        <div class="skill-card">
+            <h3>Web Development</h3>
+            <p>HTML, CSS, JavaScript</p>
+        </div>
+        <div class="skill-card">
+            <h3>Tools: </h3>
+            <p>Linux, VSCode, Git</p>
+        </div>
+        <div class="skill-card">
+            <h3>Cloud Computing</h3>
+            <p>AWS Basics</p>
+        </div>
+    </div>
+</section>
+
+
+        <section id="projects" class="card">
+            <h2><u>Projects</u></h2>
+            <div class="project">
+                <h3>1. Random Number Generator</h3>
+                <p>Click the button to generate a random number:</p>
+                <button onclick="generateRandomNumber()">Generate</button>
+                <p id="random-number">-</p>
+            </div>
+            <div class="project">
+                <h3>2. Simple Calculator</h3>
+                <div class="calculator">
+                    <input type="number" id="num1" placeholder="Enter first number">
+                    <input type="number" id="num2" placeholder="Enter second number">
+                    <select id="operation">
+                        <option value="add">Addition</option>
+                        <option value="subtract">Subtraction</option>
+                        <option value="multiply">Multiplication</option>
+                        <option value="divide">Division</option>
+                    </select>
+                    <button onclick="calculate()">Calculate</button>
+                </div>
+                <p id="calc-result">Result: -</p>
+            </div>
+            <div class="project">
+                <h3>3. Color Picker</h3>
+                <input type="color" id="color-picker" onchange="changeSectionColor()">
+                <p>Pick a color to change the background of this section.</p>
+            </div>
+        </section>
+
+        <section id="certificates" class="card">
+            <h2><u>Certificates</u></h2>
+			<p>Certifications of skills I've used to create tihs website :</p>
+            <div class="certificate-container">
+                <div class="certificate">
+                    <iframe loading="lazy" src="https://drive.google.com/file/d/1d55JO0mWCyHG6wH7c6y4yEs-vgmjGkft/preview" width="480" height="360" allow="autoplay"></iframe>
+                    <p><a href="https://www.mygreatlearning.com/certificate/FEYSLFIS">Front End Development - HTML (click here)</a></p>
+                </div>
+                <div class="certificate">
+                    <iframe loading="lazy" src="https://drive.google.com/file/d/1d3TG4bw1cK6klhFn2NuOEeSSjA-mmPD3/preview" width="480" height="360" allow="autoplay"></iframe>
+                    <p><a href="https://www.mygreatlearning.com/certificate/DEYHVXNQ">Front End Development - CSS (click here)</a></p>
+                </div>
+				
+            </div>
+        </section>
+
+        <section id="contact" class="card">
+            <h2><u>Contact</u></h2>
+			<p>Feel free to connect with me:</p>
+            <div class="contact-icons">
+                <a href="https://github.com/AadityaHande" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="https://linkedin.com/in/aadityahande" target="_blank"><i class="fab fa-linkedin"></i></a>
+                <a href="mailto:aadityahande27@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Aaditya Hande. All Rights Reserved.</p>
+    </footer>
+
+	<button id="scrollToTopBtn" title="Go to top">↑</button>
+
+    <script>
+        function generateRandomNumber() {
+            document.getElementById('random-number').textContent = Math.floor(Math.random() * 1000) + 1;
+        }
+
+        function calculate() {
+            const num1 = parseFloat(document.getElementById('num1').value);
+            const num2 = parseFloat(document.getElementById('num2').value);
+            const operation = document.getElementById('operation').value;
+            let result;
+
+            switch (operation) {
+                case 'add':
+                    result = num1 + num2;
+                    break;
+                case 'subtract':
+                    result = num1 - num2;
+                    break;
+                case 'multiply':
+                    result = num1 * num2;
+                    break;
+                case 'divide':
+                    result = num2 !== 0 ? num1 / num2 : 'Invalid..';
+                    break;
+                default:
+                    result = 'Invalid operation';
+            }
+
+            document.getElementById('calc-result').textContent = `Result: ${result}`;
+        }
+
+        function changeSectionColor() {
+            const color = document.getElementById('color-picker').value;
+            document.getElementById('projects').style.backgroundColor = color;
+        }
+
+	document.getElementById('hamburger').addEventListener('click', function () {
+    const navLinks = document.querySelector('#navbar ul');
+    navLinks.style.display = navLinks.style.display === 'flex' ? 'none' : 'flex';
+});
+
+
+document.querySelectorAll("#navbar ul a").forEach(link => {
+    link.addEventListener("click", () => {
+        const navLinks = document.querySelector('#navbar ul');
+        navLinks.classList.remove('active'); // Remove the 'active' class to hide the menu
+    });
+});
+
+
+	const scrollToTopBtn = document.getElementById("scrollToTopBtn");
+
+window.addEventListener("scroll", function() {
+    if (document.body.scrollTop > 100 || document.documentElement.scrollTop > 100) {
+        scrollToTopBtn.style.display = "block";
+    } else {
+        scrollToTopBtn.style.display = "none";
+    }
+});
+
+scrollToTopBtn.addEventListener("click", function() {
+    window.scrollTo({ top: 0, behavior: "smooth" });
+});
+
+    </script>
+</body>
+</html>
