@@ -54,7 +54,7 @@ a:hover {
 }
 
 .hero h1 {
-    font-size: 3rem;
+    font-size: 2.25rem;
     margin-bottom: 1rem;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -76,8 +76,8 @@ a:hover {
 }
 
 .hero p {
-    font-size: 1.5rem;
-    font-weight: 300;
+    font-size: 1.25rem;
+    font-weight: 250;
     margin-bottom: 1.5rem;
 }
 
